@@ -1,0 +1,90 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+.yarn/
+jspm_packages/
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+secrets/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime / process data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage & test output
+coverage/
+*.lcov
+.nyc_output/
+.jest/
+
+# Caches
+.cache/
+.npm/
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.turbo/
+.rollup.cache/
+
+# Packaging
+*.tgz
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+pgdata/
+dump.rdb
+
+# Docker
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Misc
+tmp/
+temp/
+.history/

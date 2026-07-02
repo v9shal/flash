@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // File layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment
+    "module": "nodenext",        // modern Node module system (emits CommonJS since package.json type=commonjs)
+    "target": "es2022",          // changed: stable modern JS, not bleeding edge
+    "lib": ["es2022"],
+    "types": ["node"],           // changed: need Node.js types
+
+    // Output
+    "sourceMap": true,
+    "declaration": false,        // changed: not a library, don't need .d.ts
+    "declarationMap": false,     // changed: same reason
+
+    // Strict type safety
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style — uncomment as you go
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Module behavior
+    "verbatimModuleSyntax": false, // allow ESM import/export syntax in CommonJS output
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "moduleResolution": "nodenext", // modern resolution, replaces deprecated "node" (node10)
+    "esModuleInterop": true,     // added: lets you import CommonJS modules cleanly
+    "forceConsistentCasingInFileNames": true, // added: prevents bugs on case-insensitive OS
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
