@@ -1,10 +1,13 @@
 export class AppError extends Error{
     public  readonly statusCode:number;
-    public readonly isOperaton:boolean;
-    constructor(message:string,statusCode:number,isOperational=true){
+    public readonly isOperational:boolean;
+    public readonly code?: string | undefined
+
+    constructor(message:string,statusCode:number,isOperational=true,code?:string){
         super(message);
         this.statusCode=statusCode;
-        this.isOperaton=isOperational
+        this.isOperational=isOperational
+        this.code=code
         Object.setPrototypeOf(this,AppError.prototype);
     }
 }
