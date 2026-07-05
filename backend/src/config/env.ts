@@ -10,6 +10,11 @@ const envSchema = z.object({
     .enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'])
     .default('info'),
 
+  PORT: z.coerce.number().int().positive().default(3000),
+
+  // Comma-separated list of allowed browser origins for CORS
+  CORS_ORIGIN: z.string().default('http://localhost:5173'),
+
   // PostgreSQL
   DB_HOST: z.string().default('localhost'),
   DB_PORT: z.coerce.number().int().positive().default(5432),
