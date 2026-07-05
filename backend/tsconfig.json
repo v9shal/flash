@@ -36,6 +36,7 @@
     "forceConsistentCasingInFileNames": true, // added: prevents bugs on case-insensitive OS
     "skipLibCheck": true
   },
+
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
