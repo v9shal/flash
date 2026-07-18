@@ -24,6 +24,8 @@ import logger from './utils/logger.js'
 // Your centralized error-handling middleware (named export).
 // Example: when a route throws `new NotFoundError()`, this turns it into a 404 JSON.
 import { errorHandler } from './middleware/errorHandler.js'
+// Auth module router → mounted at /api/auth.
+import authRoutes from './modules/auth/auth.routes.js'
 
 // ─── Create the application ──────────────────────────────────────────────────
 // `express()` returns an app object. Everything below configures THIS object.
@@ -107,10 +109,9 @@ app.get('/', (_req, res) => {
 })
 
 // ─── Feature routes ──────────────────────────────────────────────────────────
-// Mount each module's router under a base path. Commented out until auth.routes.ts
-// exports a router (importing an empty file would crash at startup).
-// Example once ready: `app.use('/api/auth', authRoutes)` → enables `POST /api/auth/register`.
-// app.use('/api/auth', authRoutes)
+// Mount each module's router under a base path.
+// Example: `app.use('/api/auth', authRoutes)` → enables `POST /api/auth/register`.
+app.use('/api/auth', authRoutes)
 
 // ─── 404 handler ─────────────────────────────────────────────────────────────
 // Reached only if NO route above matched (order matters — it must come after routes).
